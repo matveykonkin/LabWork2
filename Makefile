@@ -8,14 +8,9 @@ BIN_DIR = bin
 SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
 TEST_FILES = $(wildcard $(TEST_DIR)/*.cpp)
 
-MAIN_EXEC = $(BIN_DIR)/card_rpg_game
 TEST_EXEC = $(BIN_DIR)/card_rpg_tests
 
-all: $(MAIN_EXEC) $(TEST_EXEC)
-
-$(MAIN_EXEC): $(SRC_FILES)
-	@mkdir -p $(BIN_DIR)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+all: $(TEST_EXEC)  
 
 $(TEST_EXEC): $(TEST_FILES) $(SRC_FILES)
 	@mkdir -p $(BIN_DIR)
